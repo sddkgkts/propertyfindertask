@@ -33,7 +33,7 @@ Congratulations, finally you would be able to run your 1st test case
 # How to run Tests
 
 # Test with mochawsome - report
-npm run tesr:cy 
+npm run test:cy 
 
 # Test with cucumberHTML-Report
 npm run TestWithReportGeneration
