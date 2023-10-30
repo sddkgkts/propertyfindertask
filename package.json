@@ -1,0 +1,45 @@
+{
+  "name": "propertyfindertask",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cucumber-report": "node cucumber-html-report.js",
+    "delete-existingJsonReports": "rm -rf cypress/reports/cucumber-json/*.json",
+    "delete-reportFolder": "rm -rf cypress/reports/",
+    "testing": "npx cypress run -e TAGS='@PFassignment' --e2e --browser chrome --headless --record --key 61201f6c-b4ef-4d22-826d-3f408a522a00",
+    "TestWithReportGeneration": "npm run delete-reportFolder ;npm run testing ; npm run cucumber-report ; npm run delete-existingJsonReports",
+    "test:cy": "npx cypress run -e TAGS='@PFassignment' --e2e --browser electron --headless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshitaPF/propertyfinder_assigmnet.git"
+  },
+  "author": "Anshita Bhasin <anshita@propertyfinder.ae>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anshitaPF/propertyfinder_assigmnet/issues"
+  },
+  "homepage": "https://github.com/anshitaPF/propertyfinder_assigmnet#readme",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^13.3.3",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "mochawesome": "^7.1.3",
+    "playwright-webkit": "^1.25.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "commonPath": "cypress/integration/step-definition/",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {
+    "mocha": "10.1.0",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  }
+}
