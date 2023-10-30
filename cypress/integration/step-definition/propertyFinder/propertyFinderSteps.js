@@ -38,7 +38,4 @@ Given("As a client I should navigate propertyfinder page", () => {
    
   });
 
-  Then("As a client I should check number of property is equel that API response and UI", () => {
-    
-  });
 

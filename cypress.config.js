@@ -4,6 +4,7 @@ module.exports = defineConfig({
 
   projectId: "ymtzie",
   CYPRESS_RECORD_KEY: '61201f6c-b4ef-4d22-826d-3f408a522a00',
+  GITHUB_TOKEN: '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',
 
   watchForFileChanges: false,
   experimentalWebKitSupport: true,
@@ -20,11 +21,11 @@ module.exports = defineConfig({
 
     specPattern: 'cypress/e2e/features/*/*.feature',
     excludeSpecPattern: "**/cypress/pages/*,cypress/integration/step-definition/*",
-    failOnStatusCode: false,
+    failOnStatusCode: true,
     chromeWebSecurity: false,
     experimentalModifyObstructiveThirdPartyCode: true,
     experimentalWebKitSupport: true,
-    defaultCommandTimeout: 10000,
+    defaultCommandTimeout: 50000,
     pageLoadTimeout: 80000,
     watchForFileChanges: false,
     video: true,
@@ -36,9 +37,5 @@ module.exports = defineConfig({
       json: true,
       code: false
     }
-
-
-
-  
   }
 });

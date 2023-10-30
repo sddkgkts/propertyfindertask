@@ -3,7 +3,7 @@ Feature: Property Search on Property Finder.bh
 
  Background:
     Given As a client I should navigate propertyfinder page
-  Scenario: Check the total displayed number of results for category Villas with a price range of more than 300,000 AED / yearly
+  Scenario: Check the total displayed number of results for category Villas with a price range of more than 300,000 AED yearly
     When As a client I should select "Rent" option
     And As a client I should select "Villa" under Property type
     And As a client I should set min price "25000" max price "" and click search button

@@ -27,20 +27,25 @@ afterEach(() => {
       testState.runTests[testState.currentScenario.name][testState.currentStep];
     if (stepResult?.status === 'failed') {
       const screenshotFileName = `${testState.feature.name} -- ${testState.currentScenario.name} (failed).png`;
-      cy.readFile(
+
+      const readFilePromise = cy.readFile(
         `${screenshotsFolder}/${Cypress.spec.name}/${screenshotFileName}`,
-        'base64',
-      ).then((imgData) => {
+        'base64'
+      );
+      cy.wait(10000);
+      readFilePromise.then((imgData) => {
         stepResult.attachment = {
           data: imgData,
           media: { type: 'image/png' },
           index: testState.currentStep,
           testCase: testState.formatTestCase(testState.currentScenario),
         };
-      });
+      })
     }
   }
 });
+
+
 
 // Hide fetch/XHR requests
 const app = window.top;
