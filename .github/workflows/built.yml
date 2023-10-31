@@ -1,4 +1,4 @@
-name: API Test Report
+name: cypress-PF-Task
 
 on:
   push:
