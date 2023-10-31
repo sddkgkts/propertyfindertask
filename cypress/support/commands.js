@@ -28,8 +28,12 @@ Cypress.Commands.add('navigateToUrl', (url) => {
     cy.visit(url);
  })
 
+ Cypress.Commands.add('getTextContent', { prevSubject: 'element' }, ($element) => {
+    return cy.wrap($element.text().trim());
+  });
+
  Cypress.Commands.add('performAPIRequest', (method, pathParam, queryParams) => {
-    const baseUrl = 'https://www.propertyfinder.bh/_next/data/qx_spzP3HWuP6-w_Ekxwl';
+    const baseUrl = 'https://www.propertyfinder.bh/_next/data/TzDe2BoHaMDNNVVHeg4E5';
     const url = pathParam ? `${baseUrl}/${pathParam}/${queryParams}` : baseUrl;
 
     const defaultHeaders = {
