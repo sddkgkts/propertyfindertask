@@ -13,7 +13,7 @@ Feature: Property Search on Property Finder.bh
 
 
 
-   Scenario: Check the commercial properties only feature
+   Scenario: Check the commercial properties, compare wtih API response
       When As a client I should select the show commercial properties only checkbox and click on the search icon
       And As a client I should select "Offices" category from the commercial list returned
       Then As a client I should perform API request and compare with UI interms of display results
